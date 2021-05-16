@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="4" total="5" passed="1">
+  <reporter-output>
+    <line>
+      <![CDATA[verify user login successfully to application.]]>
+    </line>
+  </reporter-output>
+  <suite name="Default Suite" duration-ms="6298" started-at="2021-05-16T11:16:51 IST" finished-at="2021-05-16T11:16:57 IST">
+    <groups>
+    </groups>
+    <test name="barnabas-automation" duration-ms="6298" started-at="2021-05-16T11:16:51 IST" finished-at="2021-05-16T11:16:57 IST">
+      <class name="Tests.BarnabasStagingTest">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:Tests.BarnabasStagingTest@1c05a54d]" name="setUp" is-config="true" duration-ms="9361" started-at="2021-05-16T11:16:42 IST" finished-at="2021-05-16T11:16:51 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="barnabas_001_verifyLoginApplication()[pri:0, instance:Tests.BarnabasStagingTest@1c05a54d]" name="barnabas_001_verifyLoginApplication" duration-ms="5226" started-at="2021-05-16T11:16:52 IST" finished-at="2021-05-16T11:16:57 IST">
+          <reporter-output>
+            <line>
+              <![CDATA[verify user login successfully to application.]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- barnabas_001_verifyLoginApplication -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:Tests.BarnabasStagingTest@1c05a54d]" name="tearDown" is-config="true" duration-ms="263" started-at="2021-05-16T11:16:57 IST" finished-at="2021-05-16T11:16:58 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- Tests.BarnabasStagingTest -->
+    </test> <!-- barnabas-automation -->
+  </suite> <!-- Default Suite -->
+</testng-results>
