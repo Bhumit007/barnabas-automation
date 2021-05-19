@@ -5,9 +5,9 @@
     <classes>
       <class name="Tests.BarnabasStagingTest">
         <methods>
-          <include name="barnabas_004_verifySortingOfEvent"/>
           <include name="tearDown"/>
           <include name="setUp"/>
+          <include name="barnabas_005_verifySortingOfEvent"/>
         </methods>
       </class> <!-- Tests.BarnabasStagingTest -->
     </classes>

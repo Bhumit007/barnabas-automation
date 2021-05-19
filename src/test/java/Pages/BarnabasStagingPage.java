@@ -137,14 +137,28 @@ public class BarnabasStagingPage extends DriverFactory {
     @FindBy(xpath = "//span[contains(text(),'Duplicate Event')]")
     protected WebElement saveDuplicateEventBtn;
 
-    @FindBy(xpath = "//input[@id='rc_select_0']")
+    //@FindBy(xpath = "//input[@id='rc_select_9']")
+    @FindBy(xpath = "//span[text()='Sort by Status']/preceding-sibling::span/input")
     protected WebElement statusDropdown;
+
+    @FindBy(xpath = "//span[text()='Published']/preceding-sibling::span/input")
+    //@FindBy(xpath = "//span[text()='Sort by Status']")
+    protected WebElement statusDropdownFirst;
 
     @FindBy(xpath = "//div[text()='Published']")
     protected WebElement publishedStatus;
 
     @FindBy(xpath = "//div[text()='Unpublished']")
     protected WebElement unpublishedStatus;
+
+    @FindBy(xpath = "//a[@class='gx-site-logo']")
+    protected WebElement barnabasLogo;
+
+    @FindBy(xpath = "//span[text()='RSVP Management']")
+    protected WebElement rsvpMgtBtn;
+
+    @FindBy(xpath = "//span[text()='Event Management']")
+    protected WebElement eventMgtBtn;
 
     /**
      * Enter username.
@@ -177,6 +191,61 @@ public class BarnabasStagingPage extends DriverFactory {
         Utilities.getUtilities().waitForElementTobeClickable(loginBtn,driver);
         Utilities.getUtilities().javaScriptClickOnElement(loginBtn,driver);
         Log.info("Click On Login Button.");
+        return this;
+    }
+
+    /**
+     * Click on barnanas logo.
+     * @return
+     */
+    public BarnabasStagingPage clickOnBarnabasLogo(){
+        Utilities.getUtilities().waitForVisibilityOfElement(barnabasLogo,driver);
+        Utilities.getUtilities().waitForElementTobeClickable(barnabasLogo,driver);
+        try {
+            Utilities.getUtilities().clickOnElement(barnabasLogo);
+        }catch (Exception e){
+            Utilities.getUtilities().javaScriptClickOnElement(barnabasLogo,driver);
+        }
+        Log.info("Click On Login Button.");
+        return this;
+    }
+
+    /**
+     * Click on rsvp logo.
+     * @return
+     */
+    public BarnabasStagingPage clickOnRSVPButton(){
+        Utilities.getUtilities().waitForVisibilityOfElement(rsvpMgtBtn,driver);
+        Utilities.getUtilities().waitForElementTobeClickable(rsvpMgtBtn,driver);
+        try {
+            Utilities.getUtilities().clickOnElement(rsvpMgtBtn);
+        }catch (Exception e){
+            Utilities.getUtilities().javaScriptClickOnElement(rsvpMgtBtn,driver);
+        }
+        return this;
+    }
+
+    /**
+     * Click on event button.
+     * @return
+     */
+    public BarnabasStagingPage clickOnEventMgtBtn(){
+        Utilities.getUtilities().waitForVisibilityOfElement(eventMgtBtn,driver);
+        Utilities.getUtilities().waitForElementTobeClickable(eventMgtBtn,driver);
+        try {
+            Utilities.getUtilities().clickOnElement(eventMgtBtn);
+        }catch (Exception e){
+            Utilities.getUtilities().javaScriptClickOnElement(eventMgtBtn,driver);
+        }
+        return this;
+    }
+
+    /**
+     * NAvigate to home page logo.
+     * @return
+     */
+    public BarnabasStagingPage navigateToHomePage(){
+        driver.get("https://barnabas-staging.cpptl.co/event");
         return this;
     }
 
@@ -289,7 +358,7 @@ public class BarnabasStagingPage extends DriverFactory {
      */
     public BarnabasStagingPage sendStartDate() throws InterruptedException {
         Utilities.getUtilities().waitForElementTobeClickable(sendStartDate,driver);
-        Utilities.getUtilities().sendKey(sendStartDate,"05/15/2021");
+        Utilities.getUtilities().sendKey(sendStartDate,"05/19/2021");
         return this;
     }
 
@@ -694,7 +763,25 @@ public class BarnabasStagingPage extends DriverFactory {
      */
     public BarnabasStagingPage clickOnStatusDropdown() throws InterruptedException {
         Thread.sleep(5000);
-        Utilities.getUtilities().clickOnElement(statusDropdown);
+        try {
+                Utilities.getUtilities().clickOnElement(statusDropdown);
+        }catch (Exception e){
+                Utilities.getUtilities().javaScriptClickOnElement(statusDropdown,driver);
+        }
+        return this;
+    }
+
+    /**
+     * click on status dropdown.
+     * @return
+     */
+    public BarnabasStagingPage clickOnStatusDropdownFirst() throws InterruptedException {
+        Thread.sleep(5000);
+        try {
+                Utilities.getUtilities().clickOnElement(statusDropdownFirst);
+        }catch (Exception e){
+                Utilities.getUtilities().javaScriptClickOnElement(statusDropdownFirst,driver);
+        }
         return this;
     }
 
@@ -725,16 +812,18 @@ public class BarnabasStagingPage extends DriverFactory {
      * @return
      */
     public BarnabasStagingPage verifySortingOfDropdown() throws InterruptedException {
+        clickOnRSVPButton();
+        clickOnEventMgtBtn();
         clickOnStatusDropdown();
         selectPublishDropdown();
         Utilities.getUtilities().waitForVisibilityOfElement(publishedStatus,driver);
         if(driver.findElements(By.xpath("//span[text()='Published']")).size()>1){
             System.out.println("Published sorting working properly");
         }
-        clickOnStatusDropdown();
+        clickOnStatusDropdownFirst();
         selectUnpublishDropdown();
         Utilities.getUtilities().waitForVisibilityOfElement(unpublishedStatus,driver);
-        if(driver.findElements(By.xpath("//div[text()='Unpublished']")).size()>1){
+        if(driver.findElements(By.xpath("//span[text()='Unpublished']")).size()>1){
             System.out.println("Unpublished sorting working properly");
         }
         return this;

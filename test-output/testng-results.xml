@@ -1,27 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="4" total="5" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="5" passed="5">
   <reporter-output>
     <line>
       <![CDATA[verify user login successfully to application.]]>
     </line>
+    <line>
+      <![CDATA[New event created Successfully.]]>
+    </line>
+    <line>
+      <![CDATA[Edited event verify Successfully.]]>
+    </line>
+    <line>
+      <![CDATA[Duplicate event verify Successfully.]]>
+    </line>
+    <line>
+      <![CDATA[Sorting of event verify Successfully..]]>
+    </line>
   </reporter-output>
-  <suite name="Default Suite" duration-ms="6298" started-at="2021-05-16T11:16:51 IST" finished-at="2021-05-16T11:16:57 IST">
+  <suite name="Default Suite" duration-ms="135712" started-at="2021-05-19T11:45:34 IST" finished-at="2021-05-19T11:47:50 IST">
     <groups>
     </groups>
-    <test name="barnabas-automation" duration-ms="6298" started-at="2021-05-16T11:16:51 IST" finished-at="2021-05-16T11:16:57 IST">
+    <test name="barnabas-automation" duration-ms="135712" started-at="2021-05-19T11:45:34 IST" finished-at="2021-05-19T11:47:50 IST">
       <class name="Tests.BarnabasStagingTest">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:Tests.BarnabasStagingTest@1c05a54d]" name="setUp" is-config="true" duration-ms="9361" started-at="2021-05-16T11:16:42 IST" finished-at="2021-05-16T11:16:51 IST">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:Tests.BarnabasStagingTest@6e5bfdfc]" name="setUp" is-config="true" duration-ms="8215" started-at="2021-05-19T11:45:26 IST" finished-at="2021-05-19T11:45:34 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="barnabas_001_verifyLoginApplication()[pri:0, instance:Tests.BarnabasStagingTest@1c05a54d]" name="barnabas_001_verifyLoginApplication" duration-ms="5226" started-at="2021-05-16T11:16:52 IST" finished-at="2021-05-16T11:16:57 IST">
+        <test-method status="PASS" signature="barnabas_001_verifyLoginApplication()[pri:0, instance:Tests.BarnabasStagingTest@6e5bfdfc]" name="barnabas_001_verifyLoginApplication" duration-ms="7386" started-at="2021-05-19T11:45:34 IST" finished-at="2021-05-19T11:45:42 IST">
           <reporter-output>
             <line>
               <![CDATA[verify user login successfully to application.]]>
             </line>
           </reporter-output>
         </test-method> <!-- barnabas_001_verifyLoginApplication -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:Tests.BarnabasStagingTest@1c05a54d]" name="tearDown" is-config="true" duration-ms="263" started-at="2021-05-16T11:16:57 IST" finished-at="2021-05-16T11:16:58 IST">
+        <test-method status="PASS" signature="barnabas_002_verifyNewCreatedEvent()[pri:1, instance:Tests.BarnabasStagingTest@6e5bfdfc]" name="barnabas_002_verifyNewCreatedEvent" duration-ms="92724" started-at="2021-05-19T11:45:42 IST" finished-at="2021-05-19T11:47:15 IST">
+          <reporter-output>
+            <line>
+              <![CDATA[New event created Successfully.]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- barnabas_002_verifyNewCreatedEvent -->
+        <test-method status="PASS" signature="barnabas_003_verifyEditEvent()[pri:2, instance:Tests.BarnabasStagingTest@6e5bfdfc]" name="barnabas_003_verifyEditEvent" duration-ms="13065" started-at="2021-05-19T11:47:15 IST" finished-at="2021-05-19T11:47:28 IST">
+          <reporter-output>
+            <line>
+              <![CDATA[Edited event verify Successfully.]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- barnabas_003_verifyEditEvent -->
+        <test-method status="PASS" signature="barnabas_004_verifyDuplicateEvent()[pri:3, instance:Tests.BarnabasStagingTest@6e5bfdfc]" name="barnabas_004_verifyDuplicateEvent" duration-ms="8061" started-at="2021-05-19T11:47:28 IST" finished-at="2021-05-19T11:47:36 IST">
+          <reporter-output>
+            <line>
+              <![CDATA[Duplicate event verify Successfully.]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- barnabas_004_verifyDuplicateEvent -->
+        <test-method status="PASS" signature="barnabas_005_verifySortingOfEvent()[pri:4, instance:Tests.BarnabasStagingTest@6e5bfdfc]" name="barnabas_005_verifySortingOfEvent" duration-ms="13583" started-at="2021-05-19T11:47:36 IST" finished-at="2021-05-19T11:47:50 IST">
+          <reporter-output>
+            <line>
+              <![CDATA[Sorting of event verify Successfully..]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- barnabas_005_verifySortingOfEvent -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:Tests.BarnabasStagingTest@6e5bfdfc]" name="tearDown" is-config="true" duration-ms="288" started-at="2021-05-19T11:47:50 IST" finished-at="2021-05-19T11:47:50 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

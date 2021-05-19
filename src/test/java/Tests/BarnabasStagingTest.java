@@ -1,6 +1,7 @@
 package Tests;
 
 import DriverManager.DriverFactory;
+import DriverManager.MyScreenRecorder;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
@@ -22,7 +23,8 @@ public class BarnabasStagingTest extends DriverFactory {
     @Test(priority = 0)
     @Severity(SeverityLevel.NORMAL)
     @Step("TestCase_001 - verify Login Application")
-    public void barnabas_001_verifyLoginApplication() {
+    public void barnabas_001_verifyLoginApplication() throws Exception {
+        MyScreenRecorder.startRecording("Start Test");
         try {
             barnabasStagingPage.loginToApplication();
             Log.info("Login Successfully.");
@@ -32,13 +34,14 @@ public class BarnabasStagingTest extends DriverFactory {
             System.out.println("User could not login to application.");
             Log.error("User could not login to application." + E);
             Assert.fail("User Could not login to application." + E);
+            MyScreenRecorder.stopRecording();
         }
     }
 
-    @Test(enabled = false,priority = 1)
+    @Test(priority = 1)
     @Severity(SeverityLevel.NORMAL)
     @Step("TestCase_001 - verify newly created event")
-    public void barnabas_002_verifyNewCreatedEvent() {
+    public void barnabas_002_verifyNewCreatedEvent() throws Exception {
         try {
             barnabasStagingPage.verifyNewEvent();
             Log.info("New event created Successfully.");
@@ -48,13 +51,14 @@ public class BarnabasStagingTest extends DriverFactory {
             System.out.println("User could not able to create new event.");
             Log.error("User could not able to create new event." + E);
             Assert.fail("User could not able to create new event." + E);
+            MyScreenRecorder.stopRecording();
         }
     }
 
-    @Test(enabled = false,priority = 2)
+    @Test(priority = 2)
     @Severity(SeverityLevel.NORMAL)
     @Step("TestCase_002 - verify Edit event")
-    public void barnabas_003_verifyEditEvent() {
+    public void barnabas_003_verifyEditEvent() throws Exception {
         try {
             barnabasStagingPage.editAndVerifyEvents();
             Log.info("Edited event verify Successfully.");
@@ -64,13 +68,14 @@ public class BarnabasStagingTest extends DriverFactory {
             System.out.println("User could not able to verify edit event.");
             Log.error("User could not able to verify edit event." + E);
             Assert.fail("User could not able to verify edit event." + E);
+            MyScreenRecorder.stopRecording();
         }
     }
 
-    @Test(enabled = false,priority = 3)
+    @Test(priority = 3)
     @Severity(SeverityLevel.NORMAL)
     @Step("TestCase_003 - verify duplicate event")
-    public void barnabas_004_verifyDuplicateEvent() {
+    public void barnabas_004_verifyDuplicateEvent() throws Exception {
         try {
             barnabasStagingPage.verifyDuplicateEvent();
             Log.info("Duplicate event verify Successfully.");
@@ -80,13 +85,14 @@ public class BarnabasStagingTest extends DriverFactory {
             System.out.println("User could not able to verify duplicate event.");
             Log.error("User could not able to verify duplicate event." + E);
             Assert.fail("User could not able to verify duplicate event." + E);
+            MyScreenRecorder.stopRecording();
         }
     }
 
-    @Test(enabled = false,priority = 4)
+    @Test(priority = 4)
     @Severity(SeverityLevel.NORMAL)
     @Step("TestCase_005 - verify sorting of event")
-    public void barnabas_004_verifySortingOfEvent() {
+    public void barnabas_005_verifySortingOfEvent() throws Exception {
         try {
             barnabasStagingPage.verifySortingOfDropdown();
             Log.info("Sorting of event verify Successfully.");
@@ -96,6 +102,8 @@ public class BarnabasStagingTest extends DriverFactory {
             System.out.println("User could not able to sorting event.");
             Log.error("User could not able to sorting event." + E);
             Assert.fail("User could not able to sorting event." + E);
+        }finally {
+            MyScreenRecorder.stopRecording();
         }
     }
 }
